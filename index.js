@@ -1,5 +1,9 @@
 require("dotenv").config();
-const { Client, Intents, MessageEmbed } = require("discord.js");
+const { Client, Intents } = require("discord.js");
+
+const classes = require("./classes.json");
+const getSentiment = require("./sentiment.js");
+const { introEmbed, helpEmbed } = require("./embed.js");
 
 const client = new Client({
     intents: [
@@ -9,36 +13,31 @@ const client = new Client({
     ],
 });
 
-const doggoEmbed = {
-    color: 0xffd600, // Yellow
-    title: "GoodBoy",
-    url: "https://github.com/freyam/goodboy",
-    author: {
-        name: "Freyam Mehta",
-        icon_url: "https://i.imgur.com/3sdcqkT.jpeg", // Me
-        url: "https://github.com/freyam/",
-    },
-    description:
-        "A discord bot that suggestively sends cute animal pictures to wholesomify the atmosphere. This bot loves to make hoomans smile :)))",
-    image: {
-        url: "https://i.imgur.com/X6v6dU8.jpeg", // GoodBoy Bannner Image
-    },
-    footer: {
-        text: "Made with 💛 by Freyam!",
-    },
-};
-
 client.once("ready", () => {
     console.log(`${client.user.username} on duty!`);
 });
 
 client.on("messageCreate", (msg) => {
-    if (msg.content === "doggo?") {
+    const message = msg.content;
+    const channel = msg.channel;
+    const author = msg.author;
+
+    if (message === "doggo?") {
         msg.react("😄");
-        msg.channel.send("woof woof!");
-    } else if (msg.content === "hi goodboy") {
-        msg.react("👋");
-        msg.channel.send({ embeds: [doggoEmbed] });
+        channel.send("woof woof!");
+    } else if (message === "hi goodboy") {
+        msg.react("💛");
+        channel.send({ embeds: [introEmbed] });
+    } else if (message === "goodboy help") {
+        msg.react("🤝");
+        channel.send({ embeds: [helpEmbed] });
+    } else if (message === "x" && !author.bot) {
+        const sentiment = getSentiment(message);
+        const randomIndex = Math.floor(
+            Math.random() * classes[sentiment].length
+        );
+        const reaction = classes[sentiment][randomIndex];
+        channel.send(reaction);
     }
 });
 
