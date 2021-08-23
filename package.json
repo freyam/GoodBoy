@@ -1,0 +1,15 @@
+{
+    "name": "goodboy",
+    "version": "1.0.0",
+    "description": "A discord bot that suggestively sends cute animal pictures to wholesomify the atmosphere.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Freyam Mehta",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^13.1.0",
+        "dotenv": "^10.0.0"
+    }
+}
