@@ -1,6 +1,6 @@
 # GoodBoy
 
-### [STATUS: :construction:] [STATUS: :construction:]
+### [STATUS: :construction:]
 
 A discord bot that suggestively sends cute animal pictures to wholesomify the atmosphere.
 
