@@ -15,8 +15,6 @@ def getEmotion(message):
 
     MODEL = "cardiffnlp/twitter-roberta-base-emotion"
 
-    labels = ["anger", "joy", "optimism", "sadness"]
-
     model = AutoModelForSequenceClassification.from_pretrained(MODEL)
     tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
@@ -29,6 +27,8 @@ def getEmotion(message):
     scores = output[0][0].detach().numpy()
     scores = softmax(scores)
 
+    labels = ["anger", "joy", "optimism", "sadness"]
+
     results = {}
     for i in range(len(labels)):
         results[labels[i]] = scores[i]
@@ -37,6 +37,6 @@ def getEmotion(message):
     score = round(float(results[emotion]), 4)
 
     print("-----------")
-    print(f"{text}\n{emotion} {score}")
+    print(f"{text}\n{emotion}:{score}")
 
     return score, emotion
