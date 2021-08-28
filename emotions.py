@@ -36,6 +36,7 @@ def getEmotion(message):
     emotion = max(results, key=results.get)
     score = round(float(results[emotion]), 4)
 
+    # log
     print("-----------")
     print(f"{text}\n{emotion}:{score}")
 

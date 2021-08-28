@@ -19,4 +19,16 @@ helpEmbed = discord.Embed(
     description="Hi there, I am just a friendly neighbourhood doggo that sends hand-picked pictures of me and my friends reacting to the conversations happening in your server. I display 4 classes of emotions - joy, sadness, optimism, and anger.",
     color=0xFDCB58,
 )
-helpEmbed.set_image(url="https://i.imgur.com/X6v6dU8.jpeg")
+helpEmbed.add_field(
+    name="Dog Whistle",
+    value="""
+    - `goodboy?` to check if GoodBoy is awake and healthy.
+    - `hi goodboy` to show GoodBoy's information card.
+    - `goodboy help` to see this card.
+    - `goodboy go sleep` to let GoodBoy rest.
+    - `goodboy wake up` to wake GoodBoy up.
+    - `goodboy go fetch` to play fetch with GoodBoy.
+
+    GoodBoy also replies to all the messages by understanding the emotion of the message and reacting to them by sending a picture of his friends.
+    """,
+)
