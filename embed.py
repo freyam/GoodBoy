@@ -25,8 +25,8 @@ helpEmbed.add_field(
     - `goodboy?` to check if GoodBoy is awake and healthy.
     - `hi goodboy` to show GoodBoy's information card.
     - `goodboy help` to see this card.
-    - `goodboy go sleep` to let GoodBoy rest.
-    - `goodboy wake up` to wake GoodBoy up.
+    - `goodboy wake up` to activate GoodBoy's 6th sense in the particular channel.
+    - `goodboy go sleep` to deactivate GoodBoy's 6th sense in the particular channel.
     - `goodboy go fetch` to play fetch with GoodBoy.
 
     GoodBoy also replies to all the messages by understanding the emotion of the message and reacting to them by sending a picture of his friends.
