@@ -1,8 +1,0 @@
-{
-    "name": "goodboy",
-    "version": "1.0.0",
-    "description": "GoodBoy is a discord bot that contextually sends cute animal pictures to wholesomify the atmosphere.",
-    "main": "index.py",
-    "author": "Freyam Mehta",
-    "license": "ISC"
-}
