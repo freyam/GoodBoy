@@ -1,4 +1,3 @@
-from encryption import DISCORD_TOKEN
 import os
 import discord
 import random
@@ -6,7 +5,8 @@ import json
 
 from emotions import *
 from embed import *
-from encryption import *
+
+# from encryption import *
 
 client = discord.Client()
 
@@ -59,5 +59,4 @@ async def on_message(message):
 from dotenv import load_dotenv
 
 load_dotenv()
-# client.run(os.getenv("DISCORD_TOKEN"))
-client.run(DISCORD_TOKEN)
+client.run(os.getenv("DISCORD_TOKEN"))
