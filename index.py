@@ -14,14 +14,10 @@ async def on_ready():
     print(f"{client.user.name} on duty! woof woof!")
 
 
-# allowed_channels = []
-
-
 @client.event
 async def on_message(message):
     with open("./allowed_channels.json", "r") as f:
         allowed_channels = json.load(f)
-        print(allowed_channels["channels"])
         if message.author == client.user:
             return
         elif message.content == "goodboy?":
@@ -39,7 +35,6 @@ async def on_message(message):
             await message.channel.send("see you soon!")
         elif message.content == "goodboy wake up":
             allowed_channels["channels"].append(message.channel.name)
-            print(message.channel)
             await message.add_reaction("🌤️")
             await message.channel.send("rise and shine!")
         elif message.content == "goodboy go fetch":
