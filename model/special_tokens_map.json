@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:571b0ca9e24a8ec55ecd46f50926763dcbae77275ad5cf3ff24efb25f7b31ab5
-size 316
+{
+    "bos_token": "<s>",
+    "eos_token": "</s>",
+    "unk_token": "<unk>",
+    "sep_token": "</s>",
+    "pad_token": "<pad>",
+    "cls_token": "<s>",
+    "mask_token": {
+        "content": "<mask>",
+        "single_word": false,
+        "lstrip": true,
+        "rstrip": false,
+        "normalized": false
+    }
+}
