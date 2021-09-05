@@ -13,10 +13,8 @@ def getEmotion(message):
         processed_text = " ".join(new_text)
         return processed_text
 
-    MODEL = "cardiffnlp/twitter-roberta-base-emotion"
-
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL)
-    tokenizer = AutoTokenizer.from_pretrained(MODEL)
+    model = AutoModelForSequenceClassification.from_pretrained("model")
+    tokenizer = AutoTokenizer.from_pretrained("model")
 
     # model.save_pretrained(MODEL)
     # tokenizer.save_pretrained(MODEL)

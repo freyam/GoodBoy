@@ -42,7 +42,7 @@ async def on_message(message):
             await message.reply("https://imgur.com/annKRYx", mention_author=True)
         elif message.channel.id in allowed_channels["channels"]:
             score, emotion = getEmotion(message.content)
-            if score >= 0.875 and random.uniform(0, 1) > 0.25:
+            if score >= 0.85 and random.uniform(0, 1) > 0.5:
                 with open("./classes.json", "r") as f:
                     classes = json.load(f)
                     link = random.choice(classes[emotion])
