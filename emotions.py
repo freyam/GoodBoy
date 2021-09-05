@@ -16,8 +16,8 @@ def getEmotion(message):
     model = AutoModelForSequenceClassification.from_pretrained("model")
     tokenizer = AutoTokenizer.from_pretrained("model")
 
-    # model.save_pretrained(MODEL)
-    # tokenizer.save_pretrained(MODEL)
+    # model.save_pretrained("model")
+    # tokenizer.save_pretrained("model")
 
     text = preprocess(message)
     encoded_input = tokenizer(text, return_tensors="pt")
