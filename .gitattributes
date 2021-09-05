@@ -1,7 +1,1 @@
-model/config.json filter=lfs diff=lfs merge=lfs -text
-model/merges.txt filter=lfs diff=lfs merge=lfs -text
 model/pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
-model/special_tokens_map.json filter=lfs diff=lfs merge=lfs -text
-model/tokenizer_config.json filter=lfs diff=lfs merge=lfs -text
-model/tokenizer.json filter=lfs diff=lfs merge=lfs -text
-model/vocab.json filter=lfs diff=lfs merge=lfs -text
