@@ -30,17 +30,17 @@ async def on_message(message):
             await message.add_reaction("🤝")
             await message.channel.send(embed=helpEmbed)
         elif message.content == "goodboy go sleep":
-            allowed_channels["channels"].remove(message.channel.name)
+            allowed_channels["channels"].remove(message.channel.id)
             await message.add_reaction("💤")
             await message.channel.send("see you soon!")
         elif message.content == "goodboy wake up":
-            allowed_channels["channels"].append(message.channel.name)
+            allowed_channels["channels"].append(message.channel.id)
             await message.add_reaction("🌤️")
             await message.channel.send("rise and shine!")
         elif message.content == "goodboy go fetch":
             await message.add_reaction("🥎")
             await message.reply("https://imgur.com/annKRYx", mention_author=True)
-        elif message.channel.name in allowed_channels["channels"]:
+        elif message.channel.id in allowed_channels["channels"]:
             score, emotion = getEmotion(message.content)
             if score >= 0.875 and random.uniform(0, 1) > 0.25:
                 with open("./classes.json", "r") as f:
