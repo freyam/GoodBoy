@@ -1,6 +1,0 @@
-discord.py
-python-dotenv
-torch
-scipy
-torchvision
-transformers
